@@ -1,135 +1,77 @@
-# pharmacy-project1
-💊 Pharmacy Management System
+# CarePoint Pharmacy Management System
 
-📖 Overview
+A full-stack pharmacy website. The current `v0.1` prototype delivers the first core flow: customers can search and filter medicines, see stock levels, and add products to a cart. The backend provides a validated CRUD API for medicine inventory.
 
-The Pharmacy Management System is a software application designed to help pharmacies efficiently manage their daily operations. The system provides features for managing medicines, inventory, sales, customers, and prescriptions.
+## Technology stack
 
-The goal of this project is to reduce manual work, improve accuracy, and make pharmacy operations faster and more organized.
+- Frontend: React + Vite
+- Backend: Java 17 + Spring Boot
+- Data: H2 for local development; MySQL-ready through environment variables
+- Quality: ESLint, Vitest, JUnit, GitHub Actions
 
-⸻
+## Current features
 
-✨ Features
+- Responsive medicine catalogue
+- Search and category filters
+- Stock availability and low-stock alerts
+- Cart quantity and total calculation
+- REST API to create, read, update, delete, and search medicines
+- Request validation and automated backend tests
 
-* 💊 Medicine Management
-* 📦 Inventory Management
-* 🛒 Sales Management
-* 👤 Customer Management
-* 📋 Prescription Management
-* 🔍 Search for Medicines
-* ⚠️ Low Stock Alerts
-* 📅 Medicine Expiry Date Tracking
-* 🔐 User Authentication and Authorization
-* 📊 Dashboard for Monitoring Pharmacy Activities
+## Project structure
 
-⸻
+```text
+frontend/              React customer interface
+backend/               Spring Boot REST API
+docs/                  Project and API documentation
+.github/workflows/     Continuous integration
+```
 
-🛠️ Technologies Used
+## Run locally
 
-Depending on your project, the system may use:
+### Frontend
 
-Frontend
-
-* HTML
-* CSS
-* JavaScript
-* React
-
-Backend
-
-* Node.js / Java / Spring Boot
-
-Database
-
-* MySQL / PostgreSQL
-
-Tools
-
-* Git
-* GitHub
-* Visual Studio Code
-
-⸻
-
-📂 Project Structure
-
-pharmacy-management-system/
-│
-├── frontend/          # User interface
-├── backend/           # Server and API
-├── database/          # Database files
-├── docs/              # Project documentation
-├── README.md
-└── .gitignore
-
-⸻
-
-🚀 Installation
-
-1. Clone the repository
-
-git clone https://github.com/your-username/pharmacy-management-system.git
-
-2. Navigate to the project folder
-
-cd pharmacy-management-system
-
-3. Install dependencies
-
+```bash
+cd frontend
 npm install
+npm run dev
+```
 
-4. Run the application
+Open `http://localhost:5173`.
 
-npm start
+### Backend
 
-⸻
+```bash
+cd backend
+mvn spring-boot:run
+```
 
-🎯 Objectives
+The API is available at `http://localhost:8080/api/medicines`.
 
-The objectives of this project are to:
+## MySQL configuration
 
-* Improve the management of pharmacy operations.
-* Reduce errors in medicine and inventory management.
-* Track medicine stock levels.
-* Monitor medicine expiry dates.
-* Improve customer service.
-* Provide a secure and organized system for pharmacy records.
+Set `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD` before starting the backend. Create the `pharmacy` database first. Never commit real passwords or `.env` files.
 
-⸻
+## API endpoints
 
-👥 Users of the System
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/medicines` | List medicines |
+| GET | `/api/medicines?search=para` | Search by name |
+| GET | `/api/medicines/{id}` | Get one medicine |
+| POST | `/api/medicines` | Create medicine |
+| PUT | `/api/medicines/{id}` | Update medicine |
+| DELETE | `/api/medicines/{id}` | Delete medicine |
 
-The system can be used by:
+## Roadmap
 
-* Pharmacists
-* Pharmacy Administrators
-* Cashiers
-* Customers
+1. Connect the React catalogue to the API.
+2. Add registration, login, and role-based access.
+3. Add order checkout and order management.
+4. Add an admin inventory dashboard.
+5. Add prescription upload after the MVP.
 
-⸻
+## Author
 
-🔮 Future Improvements
+Benjamin Obeng Akyea
 
-Future versions of the system may include:
-
-* Online medicine ordering
-* Mobile application support
-* Payment gateway integration
-* SMS and email notifications
-* Advanced sales reports
-* Barcode scanning
-* Integration with healthcare systems
-
-⸻
-
-👨‍💻 Author
-
-Your Name
-
-GitHub: https://github.com/your-username
-
-⸻
-
-📄 License
-
-This project is created for educational and business purposes
